@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Zakup auta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Zakup auta</h1>
+  </header>
+  <main>
+    <section id="car-list">
+      <h2>Wybierz auto:</h2>
+      <ul id="cars">
+        <div id="car-list">
+          <div class="car-item" data-brand="Audi" data-model="A4" data-year="2018" data-power="150 KM"
+            data-mileage="70 000 km" data-price="79 900">
+            <img class="car-image"
+              src="https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGF1ZGklMjBhNHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Audi A4">
+            <h3>Audi A4</h3>
+            <ul>
+              <li>Rok produkcji: 2018</li>
+              <li>Moc silnika: 150 KM</li>
+              <li>Przebieg: 70 000 km</li>
+              <li>Cena: 79 900 PLN</li>
+            </ul><button class="buy-btn">Kup teraz</button>
+          </div>
+          <div class="car-item" data-brand="BMW" data-model="X5" data-year="2020" data-power="265 KM"
+            data-mileage="20 000 km" data-price="189 000">
+            <img class="car-image"
+              src="https://lh3.googleusercontent.com/-jlJuvtdc9PSp_0kLFVkQscl8_XHsT9177fS6BjSFSjNDQCNKztJ3w0oIA1UCZJF3_ed_h7-cCRp64dhtE0qCyiiLvKrvLVPe7q0DYUU"
+              alt="BMW X5">
+            <h3>BMW X5</h3>
+            <ul>
+              <li>Rok produkcji: 2020</li>
+              <li>Moc silnika: 265 KM</li>
+              <li>Przebieg: 20 000 km</li>
+              <li>Cena: 189 000 PLN</li>
+            </ul><button class="buy-btn">Kup teraz</button>
+          </div>
+          <div class="car-item" data-brand="Mercedes-Benz" data-model="C-Class" data-year="2019" data-power="170 KM"
+            data-mileage="45 000 km" data-price="109 900">
+            <img class="car-image"
+              src="https://media.istockphoto.com/id/642834350/es/foto/mercedes-benz-clase-c.jpg?s=612x612&w=0&k=20&c=dRcuVGqfDiet5JIt3thuNvDBv0aOte2i9jxWYdjF9nE="
+              alt="Mercedes-Benz C-Class">
+            <h3>Mercedes-Benz C-Class</h3>
+            <ul>
+              <li>Rok produkcji: 2019</li>
+              <li>Moc silnika: 170 KM</li>
+              <li>Przebieg: 45 000 km</li>
+              <li>Cena: 109 900 PLN</li>
+            </ul><button class="buy-btn">Kup teraz</button>
+          </div>
+          <div class="car-item" data-brand="Audi" data-model="A3" data-year="2018" data-power="150 KM"
+            data-mileage="35 000 km" data-price="87 500">
+            <img class="car-image"
+              src="https://media.istockphoto.com/id/1279866367/es/foto/vista-frontal-del-audi-negro-a3-aparcado-en-la-calle.jpg?s=612x612&w=0&k=20&c=L_vZxKMkRpxXcNNwoDjhkmmsyn7PJSR9Lxecd8TeRa0="
+              alt="Audi A3">
+            <h3>Audi A3</h3>
+            <ul>
+              <li>Rok produkcji: 2018</li>
+              <li>Moc silnika: 150 KM</li>
+              <li>Przebieg: 35 000 km</li>
+              <li>Cena: 87 500 PLN</li>
+            </ul>
+            <button class="buy-btn">Kup teraz</button>
+          </div>
+          <div class="car-item" data-brand="Ford" data-model="Mustang" data-year="1969" data-power="250 KM"
+            data-mileage="120 000 km" data-price="199 000">
+            <img class="car-image"
+              src="https://media.istockphoto.com/id/1468164143/es/foto/ford-mustang-coche-americano.jpg?s=612x612&w=0&k=20&c=k4xvEHXVB3clgmp2STW4WGJSp-zzZ0heJr3Jcw8Uz_A="
+              alt="Ford Mustang">
+            <h3>Ford Mustang</h3>
+            <ul>
+              <li>Rok produkcji: 1969</li>
+              <li>Moc silnika: 250 KM</li>
+              <li>Przebieg: 120 000 km</li>
+              <li>Cena: 199 000 PLN</li>
+            </ul>
+            <button class="buy-btn">Kup teraz</button>
+          </div>
+        </div>
+
+      </ul>
+    </section>
+    <section id="config-form" class="hidden">
+      <h2>Skonfiguruj swoje auto:</h2>
+      <form id="car-form">
+        <div id="configuration">
+          <form id="carForm">
+            <label for="financeType">Typ finansowania:</label>
+            <div>
+              <label>
+                <input type="radio" name="financeType" value="gotowka" checked>Gotówka
+              </label>
+              <label>
+                <input type="radio" name="financeType" value="leasing">Leasing
+              </label>
+            </div>
+
+            <label id="UserName" for="customerName">Imię i nazwisko:</label>
+            <input type="text" id="customerName" name="customerName" placeholder="Podaj imię i nazwisko" required>
+
+            <label for="deliveryDate">Data dostawy:</label>
+            <select id="deliveryDate" name="deliveryDate" required>
+              <option value="">Wybierz datę</option>
+              <option value="2023-04-17">17 kwietnia 2023</option>
+              
+            </select>
+
+            <label>Akcesoria:</label>
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" name="accessories" value="nr1">Chromowane klamki(100 zł)
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="accessories" value="nr2">Klimatyzacja (200 zł)
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="accessories" value="nr3">Podgrzewane siedzenia (300 zł)
+                </label>
+              </li>
+            </ul>
+
+            <div class="buttons">
+             
+              <button type="button" id="backButton">Powrót do wyboru</button>
+            </div>
+          </form>
+        </div>
+
+      </form>
+      <div id="error-message"></div>
+      <button id="buy-button">Zakup</button>
+    </section>
+    <section id="summary" class="hidden">
+      <h2>Podsumowanie zakupu:</h2>
+      <div id="summary-message"></div>
+      <button id="back-button">Powrót do wyboru</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
