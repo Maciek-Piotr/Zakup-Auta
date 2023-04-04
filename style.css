@@ -92,3 +92,13 @@ form fieldset {
 .buy-btn:hover {
   background-color: royalblue;
 }
+.input--error {
+  background-color: rgb(252, 134, 134);
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#customerName {
+  text-align: center;
+}

@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <h1>Zakup auta</h1>
+    <h1 id="Title">Zakup auta</h1>
   </header>
   <main>
     <section id="car-list">
@@ -27,7 +27,7 @@
               <li>Moc silnika: 150 KM</li>
               <li>Przebieg: 70 000 km</li>
               <li>Cena: 79 900 PLN</li>
-            </ul><button class="buy-btn">Kup teraz</button>
+            </ul><button class="buy-btn Audi-A4">Kup teraz</button>
           </div>
           <div class="car-item" data-brand="BMW" data-model="X5" data-year="2020" data-power="265 KM"
             data-mileage="20 000 km" data-price="189 000">
@@ -40,7 +40,7 @@
               <li>Moc silnika: 265 KM</li>
               <li>Przebieg: 20 000 km</li>
               <li>Cena: 189 000 PLN</li>
-            </ul><button class="buy-btn">Kup teraz</button>
+            </ul><button class="buy-btn BMW-X5">Kup teraz</button>
           </div>
           <div class="car-item" data-brand="Mercedes-Benz" data-model="C-Class" data-year="2019" data-power="170 KM"
             data-mileage="45 000 km" data-price="109 900">
@@ -53,7 +53,7 @@
               <li>Moc silnika: 170 KM</li>
               <li>Przebieg: 45 000 km</li>
               <li>Cena: 109 900 PLN</li>
-            </ul><button class="buy-btn">Kup teraz</button>
+            </ul><button class="buy-btn Mercedes-Benz">Kup teraz</button>
           </div>
           <div class="car-item" data-brand="Audi" data-model="A3" data-year="2018" data-power="150 KM"
             data-mileage="35 000 km" data-price="87 500">
@@ -67,7 +67,7 @@
               <li>Przebieg: 35 000 km</li>
               <li>Cena: 87 500 PLN</li>
             </ul>
-            <button class="buy-btn">Kup teraz</button>
+            <button class="buy-btn Audi-A3">Kup teraz</button>
           </div>
           <div class="car-item" data-brand="Ford" data-model="Mustang" data-year="1969" data-power="250 KM"
             data-mileage="120 000 km" data-price="199 000">
@@ -81,13 +81,14 @@
               <li>Przebieg: 120 000 km</li>
               <li>Cena: 199 000 PLN</li>
             </ul>
-            <button class="buy-btn">Kup teraz</button>
+            <button class="buy-btn Ford-Mustang">Kup teraz</button>
           </div>
         </div>
 
       </ul>
     </section>
     <section id="config-form" class="hidden">
+      <section id="Equipment"></section>
       <h2>Skonfiguruj swoje auto:</h2>
       <form id="car-form">
         <div id="configuration">
@@ -105,34 +106,34 @@
             <label id="UserName" for="customerName">Imię i nazwisko:</label>
             <input type="text" id="customerName" name="customerName" placeholder="Podaj imię i nazwisko" required>
 
-            <label for="deliveryDate">Data dostawy:</label>
-            <select id="deliveryDate" name="deliveryDate" required>
+            <label id="selectedDeliveryDateLabel" for="deliveryDate">Data dostawy:</label>
+            <select id="deliveryDateSelect" name="deliveryDate" required>
               <option value="">Wybierz datę</option>
-              <option value="2023-04-17">17 kwietnia 2023</option>
-              
+
+
             </select>
 
             <label>Akcesoria:</label>
             <ul>
               <li>
                 <label>
-                  <input type="checkbox" name="accessories" value="nr1">Chromowane klamki(100 zł)
+                  <input type="checkbox" name="accessories" value="nr1">I. Chromowane klamki (100 zł)
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="accessories" value="nr2">Klimatyzacja (200 zł)
+                  <input type="checkbox" name="accessories" value="nr2">II. Klimatyzacja (200 zł)
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="accessories" value="nr3">Podgrzewane siedzenia (300 zł)
+                  <input type="checkbox" name="accessories" value="nr3">III. Podgrzewane siedzenia (300 zł)
                 </label>
               </li>
             </ul>
 
             <div class="buttons">
-             
+
               <button type="button" id="backButton">Powrót do wyboru</button>
             </div>
           </form>
