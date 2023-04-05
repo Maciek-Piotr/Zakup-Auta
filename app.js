@@ -118,7 +118,7 @@ const ChangePrice = () => {
 const deliveryDate = new Date();
 deliveryDate.setDate(deliveryDate.getDate() + 14);
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 11; i++) {
   const option = document.createElement("option");
   option.value = deliveryDate.toISOString();
   option.text = deliveryDate.toLocaleDateString();
@@ -138,6 +138,9 @@ deliveryDateSelect.addEventListener("change", () => {
   selectedDeliveryDateLabel.textContent = "Data dostawy " + formattedDate;
 });
 
+
+
+
 Buy.addEventListener("click", () => {
   if (isInputEmpty()) {
     showInputError();
@@ -151,10 +154,12 @@ Buy.addEventListener("click", () => {
     ) {
       alert("Wybierz datę!!!");
     } else {
+      const selectedPayWay = document.querySelector('input.PayWay:checked');
+      const payWayText = selectedPayWay.value
+
       alert(
-        `Gratuluję ${CustomerName.value} dokonałeś zakupu samochodu ${Title.innerHTML} za ${Price} PLN. ${selectedDeliveryDateLabel.textContent}. Typ finansowania:`
+        `Gratuluję ${CustomerName.value} dokonałeś zakupu samochodu ${Title.innerHTML} za ${Price} PLN. ${selectedDeliveryDateLabel.textContent}. Typ finansowania: ${payWayText}`
       );
     }
   }
-  
 });
