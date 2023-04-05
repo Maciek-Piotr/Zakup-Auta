@@ -157,8 +157,26 @@ Buy.addEventListener("click", () => {
       const selectedPayWay = document.querySelector('input.PayWay:checked');
       const payWayText = selectedPayWay.value
 
+      const accessories = document.getElementsByName("accessories");
+      let total = 0;
+      for (let i = 0; i < accessories.length; i++) {
+        if (accessories[i].checked) {
+          switch (accessories[i].value) {
+            case "nr1":
+              total += 100;
+              break;
+            case "nr2":
+              total += 200;
+              break;
+            case "nr3":
+              total += 300;
+              break;
+          }
+        }
+      }
+
       alert(
-        `Gratuluję ${CustomerName.value} dokonałeś zakupu samochodu ${Title.innerHTML} za ${Price} PLN. ${selectedDeliveryDateLabel.textContent}. Typ finansowania: ${payWayText}`
+        `Gratuluję ${CustomerName.value} dokonałeś zakupu samochodu ${Title.innerHTML} za ${Price + total} PLN. ${selectedDeliveryDateLabel.textContent}. Typ finansowania: ${payWayText}`
       );
     }
   }
