@@ -8,6 +8,8 @@ const Title = document.getElementById("Title");
 const CustomerName = document.getElementById("customerName");
 const buyBtns = document.querySelectorAll(".buy-btn");
 
+let FormData = document.getElementById("car-form")
+
 Back.addEventListener("click", () => {
   CarForm.classList.toggle("hidden");
   CarList.classList.toggle("hidden");
@@ -178,6 +180,53 @@ Buy.addEventListener("click", () => {
       alert(
         `Gratuluję ${CustomerName.value} dokonałeś zakupu samochodu ${Title.innerHTML} za ${Price + total} PLN. ${selectedDeliveryDateLabel.textContent}. Typ finansowania: ${payWayText}`
       );
+      
     }
   }
 });
+
+// // funkcja zapisująca dane z formularza w localStorage
+// function saveFormData() {
+//   const formData = {
+//     financeType: document.querySelector('input[name="financeType"]:checked').value,
+//     customerName: document.getElementById("customerName").value,
+//     deliveryDate: document.getElementById("deliveryDateSelect").value,
+//     accessories: []
+//   };
+
+//   const accessories = document.getElementsByName("accessories");
+//   for (let i = 0; i < accessories.length; i++) {
+//     if (accessories[i].checked) {
+//       formData.accessories.push(accessories[i].value);
+//     }
+//   }
+
+//   localStorage.setItem("formData", JSON.stringify(formData));
+// }
+
+// // funkcja wczytująca dane z localStorage do formularza
+// function loadFormData() {
+//   const formData = JSON.parse(localStorage.getItem("formData"));
+//   if (formData) {
+//     document.querySelector('input[name="financeType"][value="' + formData.financeType + '"]').checked = true;
+//     document.getElementById("customerName").value = formData.customerName;
+//     document.getElementById("deliveryDateSelect").value = formData.deliveryDate;
+
+//     const accessories = document.getElementsByName("accessories");
+//     for (let i = 0; i < accessories.length; i++) {
+//       accessories[i].checked = formData.accessories.includes(accessories[i].value);
+//     }
+//   }
+// }
+
+// // zapisanie danych do localStorage po zmianie wartości pola formularza
+// document.getElementById("carForm").addEventListener("change", saveFormData);
+
+// // wczytanie danych z localStorage po załadowaniu strony
+// loadFormData();
+
+// // // usunięcie danych z localStorage po kliknięciu przycisku Buy
+// // Buy.addEventListener("click", () => {
+// //   localStorage.removeItem("formData");
+// // });
+
