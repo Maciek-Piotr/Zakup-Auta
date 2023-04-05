@@ -156,4 +156,5 @@ Buy.addEventListener("click", () => {
       );
     }
   }
+  
 });
