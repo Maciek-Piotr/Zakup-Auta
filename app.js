@@ -150,25 +150,6 @@ deliveryDateSelect.addEventListener("change", () => {
 });
 
 
-
-const imgX = document.querySelector('.imgX');
-
-if (Title.innerHTML === "Ford Mustang") {
-  imgX.src = "https://media.istockphoto.com/id/1468164143/es/foto/ford-mustang-coche-americano.jpg?s=612x612&w=0&k=20&c=k4xvEHXVB3clgmp2STW4WGJSp-zzZ0heJr3Jcw8Uz_A=";
-} 
-else if (Title.innerHTML === "Audi-A4") {
-  imgX.src = "https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGF1ZGklMjBhNHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60";
-}
-else if (Title.innerHTML === "Audi-A3") {
-  imgX.src = "https://media.istockphoto.com/id/1279866367/es/foto/vista-frontal-del-audi-negro-a3-aparcado-en-la-calle.jpg?s=612x612&w=0&k=20&c=L_vZxKMkRpxXcNNwoDjhkmmsyn7PJSR9Lxecd8TeRa0=";
-}
-else if  (Title.innerHTML === "BMW-X5") {
-  imgX.src = "https://lh3.googleusercontent.com/-jlJuvtdc9PSp_0kLFVkQscl8_XHsT9177fS6BjSFSjNDQCNKztJ3w0oIA1UCZJF3_ed_h7-cCRp64dhtE0qCyiiLvKrvLVPe7q0DYUU";
-}
-else if (Title.innerHTML === "Mercedes-Benz C-Class") {
-  imgX.src = "https://media.istockphoto.com/id/642834350/es/foto/mercedes-benz-clase-c.jpg?s=612x612&w=0&k=20&c=dRcuVGqfDiet5JIt3thuNvDBv0aOte2i9jxWYdjF9nE=";
-}
-
 const Summary = document.getElementById('Summary');
 const SummaryDiv = document.getElementById('SummaryDiv');
 
@@ -206,10 +187,31 @@ Buy.addEventListener("click", () => {
           }
         }
       }
+
+      const imgX = document.querySelector('.imgX');
+
+      if (Title.innerHTML === "Ford Mustang") {
+        imgX.src = "https://media.istockphoto.com/id/1468164143/es/foto/ford-mustang-coche-americano.jpg?s=612x612&w=0&k=20&c=k4xvEHXVB3clgmp2STW4WGJSp-zzZ0heJr3Jcw8Uz_A=";
+      } 
+      else if (Title.innerHTML === "Audi-A4") {
+        imgX.src = "https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGF1ZGklMjBhNHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60";
+      }
+      else if (Title.innerHTML === "Audi-A3") {
+        imgX.src = "https://media.istockphoto.com/id/1279866367/es/foto/vista-frontal-del-audi-negro-a3-aparcado-en-la-calle.jpg?s=612x612&w=0&k=20&c=L_vZxKMkRpxXcNNwoDjhkmmsyn7PJSR9Lxecd8TeRa0=";
+      }
+      else if  (Title.innerHTML === "BMW-X5") {
+        imgX.src = "https://lh3.googleusercontent.com/-jlJuvtdc9PSp_0kLFVkQscl8_XHsT9177fS6BjSFSjNDQCNKztJ3w0oIA1UCZJF3_ed_h7-cCRp64dhtE0qCyiiLvKrvLVPe7q0DYUU";
+      }
+      else if (Title.innerHTML === "Mercedes-Benz C-Class") {
+        imgX.src = "https://media.istockphoto.com/id/642834350/es/foto/mercedes-benz-clase-c.jpg?s=612x612&w=0&k=20&c=dRcuVGqfDiet5JIt3thuNvDBv0aOte2i9jxWYdjF9nE=";
+      }
+      
+
       const SummaryTxt = `Gratuluję ${CustomerName.value} dokonałeś zakupu samochodu ${Title.innerHTML} za ${Price + total} PLN. ${selectedDeliveryDateLabel.textContent}. Typ finansowania: ${payWayText}`;
       CarForm.classList.toggle("hidden");
       Summary.classList.toggle("hidden");
       SummaryDiv.innerHTML = SummaryTxt
+      console.log(imgX)
       
     }
   }
