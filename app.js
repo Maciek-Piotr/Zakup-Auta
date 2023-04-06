@@ -8,7 +8,8 @@ const Title = document.getElementById("Title");
 const CustomerName = document.getElementById("customerName");
 const buyBtns = document.querySelectorAll(".buy-btn");
 
-let FormData = document.getElementById("car-form")
+const FormData = document.getElementById("car-form");
+
 
 Back.addEventListener("click", () => {
   CarForm.classList.toggle("hidden");
@@ -78,6 +79,8 @@ buyBtns.forEach(function (buyBtn) {
   });
 });
 
+const NameError = document.getElementById("NameError")
+
 CustomerName.addEventListener("input", () => {
   UserName.innerHTML = "Imie i nazwisko:<br><br>" + CustomerName.value;
 });
@@ -85,12 +88,18 @@ CustomerName.addEventListener("input", () => {
 const deliveryDateSelect = document.getElementById("deliveryDateSelect");
 
 function isInputEmpty() {
-  return CustomerName.value.trim() === "";
+  if (CustomerName.value.trim().split(' ').length !== 2) {
+    return true;
+  }
+
+  return false;
 }
 
 function showInputError() {
   CustomerName.setCustomValidity("Podaj imię i nazwisko");
   CustomerName.classList.add("input--error");
+  NameError.classList.remove('hidden')
+
 }
 
 function hideInputError() {
@@ -143,6 +152,9 @@ deliveryDateSelect.addEventListener("change", () => {
 
 
 
+
+
+
 Buy.addEventListener("click", () => {
   if (isInputEmpty()) {
     showInputError();
@@ -185,48 +197,48 @@ Buy.addEventListener("click", () => {
   }
 });
 
-// // funkcja zapisująca dane z formularza w localStorage
-// function saveFormData() {
-//   const formData = {
-//     financeType: document.querySelector('input[name="financeType"]:checked').value,
-//     customerName: document.getElementById("customerName").value,
-//     deliveryDate: document.getElementById("deliveryDateSelect").value,
+
+
+// // Pobranie elementów formularza
+// const carForm = document.querySelector("#carForm");
+// const financeTypeInputs = document.querySelectorAll('input[name="financeType"]');
+// const customerNameInput = document.querySelector("#customerName");
+// const deliverySelectDate = document.querySelector("#deliveryDateSelect");
+// const accessoriesCheckboxes = document.querySelectorAll('input[name="accessories"]');
+
+// // Ustawienie wartości formularza na podstawie danych z LocalStorage, jeśli takie są dostępne
+// if (localStorage.getItem("carForm")) {
+//   const savedFormValues = JSON.parse(localStorage.getItem("carForm"));
+//   financeTypeInputs.forEach(input => {
+//     input.checked = (input.value === savedFormValues.financeType);
+//   });
+//   customerNameInput.value = savedFormValues.customerName;
+//   deliverySelectDate.value = savedFormValues.deliveryDate;
+//   accessoriesCheckboxes.forEach(checkbox => {
+//     checkbox.checked = savedFormValues.accessories.includes(checkbox.value);
+//   });
+// }
+
+// // Zapisywanie wartości formularza do LocalStorage po zmianie
+// carForm.addEventListener("change", () => {
+//   const formValues = {
+//     financeType: "",
+//     customerName: "",
+//     deliveryDate: "",
 //     accessories: []
 //   };
-
-//   const accessories = document.getElementsByName("accessories");
-//   for (let i = 0; i < accessories.length; i++) {
-//     if (accessories[i].checked) {
-//       formData.accessories.push(accessories[i].value);
+//   financeTypeInputs.forEach(input => {
+//     if (input.checked) {
+//       formValues.financeType = input.value;
 //     }
-//   }
-
-//   localStorage.setItem("formData", JSON.stringify(formData));
-// }
-
-// // funkcja wczytująca dane z localStorage do formularza
-// function loadFormData() {
-//   const formData = JSON.parse(localStorage.getItem("formData"));
-//   if (formData) {
-//     document.querySelector('input[name="financeType"][value="' + formData.financeType + '"]').checked = true;
-//     document.getElementById("customerName").value = formData.customerName;
-//     document.getElementById("deliveryDateSelect").value = formData.deliveryDate;
-
-//     const accessories = document.getElementsByName("accessories");
-//     for (let i = 0; i < accessories.length; i++) {
-//       accessories[i].checked = formData.accessories.includes(accessories[i].value);
+//   });
+//   formValues.customerName = customerNameInput.value;
+//   formValues.deliveryDate = deliverySelectDate.value;
+//   accessoriesCheckboxes.forEach(checkbox => {
+//     if (checkbox.checked) {
+//       formValues.accessories.push(checkbox.value);
 //     }
-//   }
-// }
-
-// // zapisanie danych do localStorage po zmianie wartości pola formularza
-// document.getElementById("carForm").addEventListener("change", saveFormData);
-
-// // wczytanie danych z localStorage po załadowaniu strony
-// loadFormData();
-
-// // // usunięcie danych z localStorage po kliknięciu przycisku Buy
-// // Buy.addEventListener("click", () => {
-// //   localStorage.removeItem("formData");
-// // });
+//   });
+//   localStorage.setItem("carForm", JSON.stringify(formValues));
+// });
 

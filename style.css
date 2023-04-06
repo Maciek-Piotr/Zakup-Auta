@@ -102,3 +102,9 @@ form fieldset {
 #customerName {
   text-align: center;
 }
+#NameError{
+  background-color: red;
+  font-size: 25px;
+
+}
+
