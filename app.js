@@ -217,6 +217,12 @@ Buy.addEventListener("click", () => {
   }
 });
 
+document.getElementById('ButtonToBack').addEventListener("click", () => {
+
+  CarList.classList.toggle("hidden");
+  Summary,classList.add('hidden')
+})
+
 
 
 // // Pobranie elementów formularza
