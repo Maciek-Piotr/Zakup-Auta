@@ -9,9 +9,8 @@ body {
   background-position: center;
   color: white;
 }
-img {
-  opacity: 0.9;
-}
+
+
 header {
   background-color: #f1f1f1;
   padding: 20px;
@@ -26,7 +25,7 @@ h1 {
 
 main {
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 ul {
@@ -44,6 +43,13 @@ li {
   border-radius: 20px;
   transition: 0.3s;
   opacity: 1;
+}
+.imgX {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  transition: 0.3s;
+  opacity: 1;  
 }
 .car-image:hover {
   max-width: 420px;
