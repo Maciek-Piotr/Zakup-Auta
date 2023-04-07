@@ -145,7 +145,6 @@ for (let i = 0; i < 11; i++) {
   deliveryDate.setDate(deliveryDate.getDate() + 1);
 }
 
-// const deliveryDateSelect = document.getElementById("deliveryDateSelect");
 const selectedDeliveryDateLabel = document.getElementById(
   "selectedDeliveryDateLabel"
 );
@@ -228,46 +227,3 @@ document.getElementById("ButtonToBack").addEventListener("click", () => {
   CarList.classList.toggle("hidden");
   Summary.classList.add("hidden");
 });
-
-// // Pobranie elementów formularza
-// const carForm = document.querySelector("#carForm");
-// const financeTypeInputs = document.querySelectorAll('input[name="financeType"]');
-// const customerNameInput = document.querySelector("#customerName");
-// const deliverySelectDate = document.querySelector("#deliveryDateSelect");
-// const accessoriesCheckboxes = document.querySelectorAll('input[name="accessories"]');
-
-// // Ustawienie wartości formularza na podstawie danych z LocalStorage, jeśli takie są dostępne
-// if (localStorage.getItem("carForm")) {
-//   const savedFormValues = JSON.parse(localStorage.getItem("carForm"));
-//   financeTypeInputs.forEach(input => {
-//     input.checked = (input.value === savedFormValues.financeType);
-//   });
-//   customerNameInput.value = savedFormValues.customerName;
-//   deliverySelectDate.value = savedFormValues.deliveryDate;
-//   accessoriesCheckboxes.forEach(checkbox => {
-//     checkbox.checked = savedFormValues.accessories.includes(checkbox.value);
-//   });
-// }
-
-// // Zapisywanie wartości formularza do LocalStorage po zmianie
-// carForm.addEventListener("change", () => {
-//   const formValues = {
-//     financeType: "",
-//     customerName: "",
-//     deliveryDate: "",
-//     accessories: []
-//   };
-//   financeTypeInputs.forEach(input => {
-//     if (input.checked) {
-//       formValues.financeType = input.value;
-//     }
-//   });
-//   formValues.customerName = customerNameInput.value;
-//   formValues.deliveryDate = deliverySelectDate.value;
-//   accessoriesCheckboxes.forEach(checkbox => {
-//     if (checkbox.checked) {
-//       formValues.accessories.push(checkbox.value);
-//     }
-//   });
-//   localStorage.setItem("carForm", JSON.stringify(formValues));
-// });
