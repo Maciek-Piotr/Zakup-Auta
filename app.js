@@ -150,6 +150,10 @@ deliveryDateSelect.addEventListener("change", () => {
 const Summary = document.getElementById("Summary");
 const SummaryDiv = document.getElementById("SummaryDiv");
 
+function clearLocalStorage() {
+  localStorage.clear();
+}
+
 Buy.addEventListener("click", () => {
   if (isInputEmpty()) {
     showInputError();
@@ -209,11 +213,11 @@ Buy.addEventListener("click", () => {
         Price + total
       } PLN. ${
         selectedDeliveryDateLabel.textContent
-      }. Typ finansowania: ${payWayText}`;
+      }. Typ finansowania: ${payWayText}. Dziękujemy za skorzystanie z naszych usług.`;
       CarForm.classList.toggle("hidden");
       Summary.classList.toggle("hidden");
       SummaryDiv.innerHTML = SummaryTxt;
-      console.log(imgX);
+      clearLocalStorage();
     }
   }
 });
