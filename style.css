@@ -4,8 +4,8 @@ body {
   text-align: center;
 
   background-image: url(https://media.istockphoto.com/id/1058638602/pl/zdj%C4%99cie/staromodna-stacja-benzynowa.jpg?s=612x612&w=0&k=20&c=_gfauAdvHO3ZtgYAAQs_LbanrvTd3Tjd1KCoQookZHc=);
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   color: white;
 }
