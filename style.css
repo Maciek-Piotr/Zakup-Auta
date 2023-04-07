@@ -3,7 +3,7 @@ body {
   box-sizing: border-box;
   text-align: center;
 
-  background-image: url(https://media.istockphoto.com/id/1058638602/pl/zdj%C4%99cie/staromodna-stacja-benzynowa.jpg?s=612x612&w=0&k=20&c=_gfauAdvHO3ZtgYAAQs_LbanrvTd3Tjd1KCoQookZHc=);
+  background-image: url('img/classic-old-car-2022-03-04-05-34-41-utc.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -41,7 +41,7 @@ li {
 
 .car-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 45%;
   border-radius: 20px;
   transition: 0.3s;
   opacity: 1;
@@ -54,7 +54,7 @@ li {
   opacity: 1;  
 }
 .car-image:hover {
-  max-width: 420px;
+  max-width: 43%;
 }
 
 .hidden {
