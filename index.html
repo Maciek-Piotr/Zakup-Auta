@@ -10,7 +10,9 @@
 <body>
   <header>
     <h1 id="Title">Zakup auta</h1>
+
   </header>
+  <input type="text" id="wyszukaj" placeholder="Wyszukaj...">
   <main>
     <section id="car-list">
       <h2>Wybierz auto:</h2>
@@ -18,9 +20,7 @@
         <div id="cars-list">
           <div class="car-item" data-brand="Audi" data-model="A4" data-year="2018" data-power="150 KM"
             data-mileage="70 000 km" data-price="79 900">
-            <img class="car-image"
-              src="https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGF1ZGklMjBhNHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt="Audi A4">
+            <img class="car-image" src="img/Audi-A4.jpeg" alt="Audi A4">
             <h3>Audi A4</h3>
             <ul>
               <li>Rok produkcji: 2018</li>
@@ -31,9 +31,8 @@
           </div>
           <div class="car-item" data-brand="BMW" data-model="X5" data-year="2020" data-power="265 KM"
             data-mileage="20 000 km" data-price="189 000">
-            <img class="car-image" src="https://img.chceauto.pl/bmw/x5/bmw-x5-suv-3914-39882_head.jpg" alt="BMW X5">
+            <img class="car-image" src="img/bmw-x5.jpeg" alt="BMW X5">
             <h3>BMW X5</h3>
-
             <ul>
               <li>Rok produkcji: 2020</li>
               <li>Moc silnika: 265 KM</li>
@@ -43,9 +42,7 @@
           </div>
           <div class="car-item" data-brand="Mercedes-Benz" data-model="C-Class" data-year="2019" data-power="170 KM"
             data-mileage="45 000 km" data-price="109 900">
-            <img class="car-image"
-              src="https://media.istockphoto.com/id/642834350/es/foto/mercedes-benz-clase-c.jpg?s=612x612&w=0&k=20&c=dRcuVGqfDiet5JIt3thuNvDBv0aOte2i9jxWYdjF9nE="
-              alt="Mercedes-Benz C-Class">
+            <img class="car-image" src="img/mercedes.jpeg" alt="Mercedes-Benz C-Class">
             <h3>Mercedes-Benz C-Class</h3>
             <ul>
               <li>Rok produkcji: 2019</li>
@@ -56,9 +53,7 @@
           </div>
           <div class="car-item" data-brand="Audi" data-model="A3" data-year="2018" data-power="150 KM"
             data-mileage="35 000 km" data-price="87 500">
-            <img class="car-image"
-              src="https://media.istockphoto.com/id/1279866367/es/foto/vista-frontal-del-audi-negro-a3-aparcado-en-la-calle.jpg?s=612x612&w=0&k=20&c=L_vZxKMkRpxXcNNwoDjhkmmsyn7PJSR9Lxecd8TeRa0="
-              alt="Audi A3">
+            <img class="car-image" src="img/Audi-A3.jpeg" alt="Audi A3">
             <h3>Audi A3</h3>
             <ul>
               <li>Rok produkcji: 2018</li>
@@ -70,9 +65,7 @@
           </div>
           <div class="car-item" data-brand="Ford" data-model="Mustang" data-year="1969" data-power="250 KM"
             data-mileage="120 000 km" data-price="199 000">
-            <img class="car-image"
-              src="https://media.istockphoto.com/id/1468164143/es/foto/ford-mustang-coche-americano.jpg?s=612x612&w=0&k=20&c=k4xvEHXVB3clgmp2STW4WGJSp-zzZ0heJr3Jcw8Uz_A="
-              alt="Ford Mustang">
+            <img class="car-image" src="img/mustang.jpeg" alt="Ford Mustang">
             <h3>Ford Mustang</h3>
             <ul>
               <li>Rok produkcji: 1969</li>
@@ -90,6 +83,7 @@
     <section id="config-form" class="hidden">
       <section id="Equipment"></section>
       <h2>Skonfiguruj swoje auto:</h2>
+      <img class="imgY" src="" alt="Opis obrazka"><br></br>
       <form id="car-form">
         <div id="configuration">
           <form id="carForm">
@@ -148,11 +142,12 @@
     <section id="Summary" class="hidden">
       <div id="SummaryDiv">X</div><br></br>
       <img class="imgX" src="" alt="Opis obrazka"><br></br>
-     
+
 
     </section>
   </main>
   <script src="oplata.js"></script>
+  <script src="wyszukiwarka.js"></script>
   <script src="akcesoria.js"></script>
   <script src="NAme.js"></script>
   <script src="app.js"></script>

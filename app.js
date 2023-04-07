@@ -7,12 +7,15 @@ const Equipment = document.getElementById("Equipment");
 const Title = document.getElementById("Title");
 const CustomerName = document.getElementById("customerName");
 const buyBtns = document.querySelectorAll(".buy-btn");
-
+const Src = document.getElementById("wyszukaj");
 const FormCarData = document.getElementById("car-form");
+const imgX = document.querySelector(".imgX");
+const imgY = document.querySelector(".imgY");
 
 Back.addEventListener("click", () => {
   CarForm.classList.toggle("hidden");
   CarList.classList.toggle("hidden");
+  Src.classList.toggle("hidden");
   Title.innerHTML = "Zakup Auta";
 });
 
@@ -20,6 +23,7 @@ buyBtns.forEach(function (buyBtn) {
   buyBtn.addEventListener("click", function () {
     CarForm.classList.toggle("hidden");
     CarList.classList.toggle("hidden");
+    Src.classList.toggle("hidden");
     if (buyBtn.classList.contains("Ford-Mustang")) {
       Title.innerHTML = "Ford Mustang";
       Equipment.innerHTML =
@@ -30,6 +34,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Cena: 199 000 PLN</li>" +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
+      imgY.src = "img/mustang.jpeg";
     }
     if (buyBtn.classList.contains("Audi-A3")) {
       Title.innerHTML = "Audi-A3";
@@ -41,6 +46,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Cena: 87 500 PLN</li>" +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
+      imgY.src = "img/Audi-A3.jpeg";
     }
     if (buyBtn.classList.contains("Mercedes-Benz")) {
       Title.innerHTML = "Mercedes-Benz C-Class";
@@ -52,6 +58,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Cena: 109 900 PLN</li>" +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
+      imgY.src = "img/mercedes.jpeg";
     }
     if (buyBtn.classList.contains("BMW-X5")) {
       Title.innerHTML = "BMW-X5";
@@ -63,6 +70,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Cena: 189 000 PLN</li>" +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
+      imgY.src = "img/bmw-x5.jpeg";
     }
     if (buyBtn.classList.contains("Audi-A4")) {
       Title.innerHTML = "Audi-A4";
@@ -74,6 +82,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Cena: 79 900 PLN</li>" +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
+      imgY.src = "img/Audi-A4.jpeg";
     }
   });
 });
@@ -188,23 +197,16 @@ Buy.addEventListener("click", () => {
         }
       }
 
-      const imgX = document.querySelector(".imgX");
-
       if (Title.innerHTML === "Ford Mustang") {
-        imgX.src =
-          "https://media.istockphoto.com/id/1468164143/es/foto/ford-mustang-coche-americano.jpg?s=612x612&w=0&k=20&c=k4xvEHXVB3clgmp2STW4WGJSp-zzZ0heJr3Jcw8Uz_A=";
+        imgX.src = "img/mustang.jpeg";
       } else if (Title.innerHTML === "Audi-A4") {
-        imgX.src =
-          "https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGF1ZGklMjBhNHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60";
+        imgX.src = "img/Audi-A4.jpeg";
       } else if (Title.innerHTML === "Audi-A3") {
-        imgX.src =
-          "https://media.istockphoto.com/id/1279866367/es/foto/vista-frontal-del-audi-negro-a3-aparcado-en-la-calle.jpg?s=612x612&w=0&k=20&c=L_vZxKMkRpxXcNNwoDjhkmmsyn7PJSR9Lxecd8TeRa0=";
+        imgX.src = "img/Audi-A3.jpeg";
       } else if (Title.innerHTML === "BMW-X5") {
-        imgX.src =
-          "https://img.chceauto.pl/bmw/x5/bmw-x5-suv-3914-39882_head.jpg";
+        imgX.src = "img/bmw-x5.jpeg";
       } else if (Title.innerHTML === "Mercedes-Benz C-Class") {
-        imgX.src =
-          "https://media.istockphoto.com/id/642834350/es/foto/mercedes-benz-clase-c.jpg?s=612x612&w=0&k=20&c=dRcuVGqfDiet5JIt3thuNvDBv0aOte2i9jxWYdjF9nE=";
+        imgX.src = "img/mercedes.jpeg";
       }
 
       const SummaryTxt = `Gratuluję ${
