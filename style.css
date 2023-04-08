@@ -145,3 +145,6 @@ form select {
   background-color: red;
   font-size: 25px;
 }
+#car-list img {
+  cursor: pointer;
+}

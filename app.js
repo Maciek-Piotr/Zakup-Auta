@@ -165,6 +165,10 @@ function clearLocalStorage() {
 Buy.addEventListener("click", () => {
   if (isInputEmpty()) {
     showInputError();
+    window.scrollTo(
+      0,
+      document.documentElement.scrollHeight - window.innerHeight
+    );
   } else {
     hideInputError();
 
@@ -208,7 +212,7 @@ Buy.addEventListener("click", () => {
         imgX.src = "img/mercedes.jpeg";
       }
 
-      const SummaryTxt = `Gratuluję ${
+      const SummaryTxt = `GRATULUJĘ!! ${
         CustomerName.value
       } dokonałeś zakupu samochodu ${Title.innerHTML} za ${
         Price + total
