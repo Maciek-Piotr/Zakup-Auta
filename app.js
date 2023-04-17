@@ -20,6 +20,25 @@ backBtn.addEventListener("click", () => {
   title.innerHTML = "Zakup Auta";
 });
 
+let Price = 0;
+const ChangePrice = () => {
+  if (title.innerHTML === "Audi-A4") {
+    Price = 79900;
+  }
+  if (title.innerHTML === "Audi-A3") {
+    Price = 87500;
+  }
+  if (title.innerHTML === "BMW-X5") {
+    Price = 189000;
+  }
+  if (title.innerHTML === "Mercedes-Benz C-Class") {
+    Price = 109900;
+  }
+  if (title.innerHTML === "Ford Mustang") {
+    Price = 199000;
+  }
+};
+
 buyBtns.forEach(function (buyBtn) {
   buyBtn.addEventListener("click", function () {
     carForm.classList.toggle("hidden");
@@ -114,25 +133,6 @@ function hideInputError() {
   customerName.setCustomValidity("");
   customerName.classList.remove("input--error");
 }
-
-let Price = 0;
-const ChangePrice = () => {
-  if (title.innerHTML === "Audi-A4") {
-    Price = 79900;
-  }
-  if (title.innerHTML === "Audi-A3") {
-    Price = 87500;
-  }
-  if (title.innerHTML === "BMW-X5") {
-    Price = 189000;
-  }
-  if (title.innerHTML === "Mercedes-Benz C-Class") {
-    Price = 109900;
-  }
-  if (title.innerHTML === "Ford Mustang") {
-    Price = 199000;
-  }
-};
 
 const deliveryDate = new Date();
 deliveryDate.setDate(deliveryDate.getDate() + 14);
