@@ -17,7 +17,7 @@ body {
   height: 100vh;
   background-attachment: fixed;
 }
-#wyszukaj {
+#src {
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -40,6 +40,7 @@ input {
   font-size: 16px;
   color: #333;
   background-color: #f5f5f5;
+  padding: 10px;
 
   outline: none;
 }
@@ -138,8 +139,9 @@ form select {
   text-transform: uppercase;
 }
 
-#customerName, #deliveryDateSelect {
-  text-align: center; 
+#customerName,
+#deliveryDateSelect {
+  text-align: center;
   display: table-cell;
   vertical-align: middle;
 }
