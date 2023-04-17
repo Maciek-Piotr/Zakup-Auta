@@ -16,26 +16,26 @@ backBtn.addEventListener("click", () => {
   carList.classList.toggle("hidden");
   srcInput.classList.toggle("hidden");
   nameError.classList.add("hidden");
-  customerName.classList.remove('input--error')
+  customerName.classList.remove("input--error");
   title.innerHTML = "Zakup Auta";
 });
 
-let Price = 0;
-const ChangePrice = () => {
+let price = 0;
+const changePrice = () => {
   if (title.innerHTML === "Audi-A4") {
-    Price = 79900;
+    price = 79900;
   }
   if (title.innerHTML === "Audi-A3") {
-    Price = 87500;
+    price = 87500;
   }
   if (title.innerHTML === "BMW-X5") {
-    Price = 189000;
+    price = 189000;
   }
   if (title.innerHTML === "Mercedes-Benz C-Class") {
-    Price = 109900;
+    price = 109900;
   }
   if (title.innerHTML === "Ford Mustang") {
-    Price = 199000;
+    price = 199000;
   }
 };
 
@@ -44,24 +44,6 @@ buyBtns.forEach(function (buyBtn) {
     carForm.classList.toggle("hidden");
     carList.classList.toggle("hidden");
     srcInput.classList.toggle("hidden");
-
-const accessories = document.getElementsByName("accessories");
-      let total = 0;
-      for (let i = 0; i < accessories.length; i++) {
-        if (accessories[i].checked) {
-          switch (accessories[i].value) {
-            case "nr1":
-              total += 100;
-              break;
-            case "nr2":
-              total += 200;
-              break;
-            case "nr3":
-              total += 300;
-              break;
-          }
-        }
-      }
 
     if (buyBtn.classList.contains("FordMustang")) {
       title.innerHTML = "Ford Mustang";
@@ -175,8 +157,8 @@ deliveryDateSelect.addEventListener("change", () => {
   selectedDeliveryDateLabel.textContent = "Data dostawy " + formattedDate;
 });
 
-const Summary = document.getElementById("Summary");
-const SummaryDiv = document.getElementById("SummaryDiv");
+const summary = document.getElementById("summary");
+const summaryDiv = document.getElementById("summaryDiv");
 
 function clearLocalStorage() {
   localStorage.clear();
@@ -192,14 +174,14 @@ buybutton.addEventListener("click", () => {
   } else {
     hideInputError();
 
-    ChangePrice();
+    changePrice();
     if (
       selectedDeliveryDateLabel.textContent === "Data dostawy:" ||
       selectedDeliveryDateLabel.textContent === "Data dostawy Invalid Date"
     ) {
       alert("Wybierz datę!!!");
     } else {
-      const selectedPayWay = document.querySelector("input.PayWay:checked");
+      const selectedPayWay = document.querySelector("input.payWay:checked");
       const payWayText = selectedPayWay.value;
 
       const accessories = document.getElementsByName("accessories");
@@ -232,22 +214,17 @@ buybutton.addEventListener("click", () => {
         imgX.src = "img/mercedes.jpeg";
       }
 
-      const SummaryTxt = `GRATULUJĘ!! ${
+      const summaryTxt = `GRATULUJĘ!! ${
         customerName.value
       } dokonałeś zakupu samochodu ${title.innerHTML} za ${
-        Price + total
+        price + total
       } PLN. ${
         selectedDeliveryDateLabel.textContent
       }. Typ finansowania: ${payWayText}. Dziękujemy za skorzystanie z naszych usług.`;
       carForm.classList.toggle("hidden");
-      Summary.classList.toggle("hidden");
-      SummaryDiv.innerHTML = SummaryTxt;
+      summary.classList.toggle("hidden");
+      summaryDiv.innerHTML = summaryTxt;
       clearLocalStorage();
     }
   }
-});
-
-document.getElementById("ButtonToBack").addEventListener("click", () => {
-  carList.classList.toggle("hidden");
-  Summary.classList.add("hidden");
 });
