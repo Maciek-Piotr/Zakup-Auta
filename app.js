@@ -1,32 +1,31 @@
-const CarForm = document.getElementById("config-form");
-const Back = document.getElementById("backButton");
-const Buy = document.getElementById("buy-button");
-const UserName = document.getElementById("UserName");
-const CarList = document.getElementById("car-list");
-const Equipment = document.getElementById("Equipment");
-const Title = document.getElementById("Title");
-const CustomerName = document.getElementById("customerName");
-const buyBtns = document.querySelectorAll(".buy-btn");
-const Src = document.getElementById("wyszukaj");
-const FormCarData = document.getElementById("car-form");
+const carForm = document.getElementById("configForm");
+const backBtn = document.getElementById("backButton");
+const buybutton = document.getElementById("buyButton");
+const userName = document.getElementById("userName");
+const carList = document.getElementById("carListSectiom");
+const equipment = document.getElementById("equipment");
+const title = document.getElementById("title");
+const customerName = document.getElementById("customerName");
+const buyBtns = document.querySelectorAll(".buyBtn");
+const srcInput = document.getElementById("src");
 const imgX = document.querySelector(".imgX");
 const imgY = document.querySelector(".imgY");
 
-Back.addEventListener("click", () => {
-  CarForm.classList.toggle("hidden");
-  CarList.classList.toggle("hidden");
-  Src.classList.toggle("hidden");
-  Title.innerHTML = "Zakup Auta";
+backBtn.addEventListener("click", () => {
+  carForm.classList.toggle("hidden");
+  carList.classList.toggle("hidden");
+  srcInput.classList.toggle("hidden");
+  title.innerHTML = "Zakup Auta";
 });
 
 buyBtns.forEach(function (buyBtn) {
   buyBtn.addEventListener("click", function () {
-    CarForm.classList.toggle("hidden");
-    CarList.classList.toggle("hidden");
-    Src.classList.toggle("hidden");
-    if (buyBtn.classList.contains("Ford-Mustang")) {
-      Title.innerHTML = "Ford Mustang";
-      Equipment.innerHTML =
+    carForm.classList.toggle("hidden");
+    carList.classList.toggle("hidden");
+    srcInput.classList.toggle("hidden");
+    if (buyBtn.classList.contains("FordMustang")) {
+      title.innerHTML = "Ford Mustang";
+      equipment.innerHTML =
         "<ul>" +
         "<li>Rok produkcji: 1969</li>" +
         "<li>Moc silnika: 250 KM</li>" +
@@ -37,8 +36,8 @@ buyBtns.forEach(function (buyBtn) {
       imgY.src = "img/mustang.jpeg";
     }
     if (buyBtn.classList.contains("Audi-A3")) {
-      Title.innerHTML = "Audi-A3";
-      Equipment.innerHTML =
+      title.innerHTML = "Audi-A3";
+      equipment.innerHTML =
         "<ul>" +
         "<li>Rok produkcji: 2018</li>" +
         "<li>Moc silnika: 150 KM</li>" +
@@ -49,8 +48,8 @@ buyBtns.forEach(function (buyBtn) {
       imgY.src = "img/Audi-A3.jpeg";
     }
     if (buyBtn.classList.contains("Mercedes-Benz")) {
-      Title.innerHTML = "Mercedes-Benz C-Class";
-      Equipment.innerHTML =
+      title.innerHTML = "Mercedes-Benz C-Class";
+      equipment.innerHTML =
         "<ul>" +
         "<li>Rok produkcji: 2019</li>" +
         "<li>Moc silnika: 170 KM</li>" +
@@ -61,8 +60,8 @@ buyBtns.forEach(function (buyBtn) {
       imgY.src = "img/mercedes.jpeg";
     }
     if (buyBtn.classList.contains("BMW-X5")) {
-      Title.innerHTML = "BMW-X5";
-      Equipment.innerHTML =
+      title.innerHTML = "BMW-X5";
+      equipment.innerHTML =
         "  <ul>" +
         " <li>Rok produkcji: 2020</li>" +
         " <li>Moc silnika: 265 KM</li>" +
@@ -73,8 +72,8 @@ buyBtns.forEach(function (buyBtn) {
       imgY.src = "img/bmw-x5.jpeg";
     }
     if (buyBtn.classList.contains("Audi-A4")) {
-      Title.innerHTML = "Audi-A4";
-      Equipment.innerHTML =
+      title.innerHTML = "Audi-A4";
+      equipment.innerHTML =
         "<ul>" +
         "<li>Rok produkcji: 2018</li>" +
         "<li>Moc silnika: 150 KM</li>" +
@@ -87,16 +86,16 @@ buyBtns.forEach(function (buyBtn) {
   });
 });
 
-const NameError = document.getElementById("NameError");
+const nameError = document.getElementById("nameError");
 
-CustomerName.addEventListener("input", () => {
-  UserName.innerHTML = "Imie i nazwisko:<br><br>" + CustomerName.value;
+customerName.addEventListener("input", () => {
+  userName.innerHTML = "Imie i nazwisko:<br><br>" + customerName.value;
 });
 
 const deliveryDateSelect = document.getElementById("deliveryDateSelect");
 
 function isInputEmpty() {
-  if (CustomerName.value.trim().split(" ").length !== 2) {
+  if (customerName.value.trim().split(" ").length !== 2) {
     return true;
   }
 
@@ -104,31 +103,31 @@ function isInputEmpty() {
 }
 
 function showInputError() {
-  CustomerName.setCustomValidity("Podaj imię i nazwisko");
-  CustomerName.classList.add("input--error");
-  NameError.classList.remove("hidden");
+  customerName.setCustomValidity("Podaj imię i nazwisko");
+  customerName.classList.add("input--error");
+  nameError.classList.remove("hidden");
 }
 
 function hideInputError() {
-  CustomerName.setCustomValidity("");
-  CustomerName.classList.remove("input--error");
+  customerName.setCustomValidity("");
+  customerName.classList.remove("input--error");
 }
 
 let Price = 0;
 const ChangePrice = () => {
-  if (Title.innerHTML === "Audi-A4") {
+  if (title.innerHTML === "Audi-A4") {
     Price = 79900;
   }
-  if (Title.innerHTML === "Audi-A3") {
+  if (title.innerHTML === "Audi-A3") {
     Price = 87500;
   }
-  if (Title.innerHTML === "BMW-X5") {
+  if (title.innerHTML === "BMW-X5") {
     Price = 189000;
   }
-  if (Title.innerHTML === "Mercedes-Benz C-Class") {
+  if (title.innerHTML === "Mercedes-Benz C-Class") {
     Price = 109900;
   }
-  if (Title.innerHTML === "Ford Mustang") {
+  if (title.innerHTML === "Ford Mustang") {
     Price = 199000;
   }
 };
@@ -162,7 +161,7 @@ function clearLocalStorage() {
   localStorage.clear();
 }
 
-Buy.addEventListener("click", () => {
+buybutton.addEventListener("click", () => {
   if (isInputEmpty()) {
     showInputError();
     window.scrollTo(
@@ -200,26 +199,26 @@ Buy.addEventListener("click", () => {
         }
       }
 
-      if (Title.innerHTML === "Ford Mustang") {
+      if (title.innerHTML === "Ford Mustang") {
         imgX.src = "img/mustang.jpeg";
-      } else if (Title.innerHTML === "Audi-A4") {
+      } else if (title.innerHTML === "Audi-A4") {
         imgX.src = "img/Audi-A4.jpeg";
-      } else if (Title.innerHTML === "Audi-A3") {
+      } else if (title.innerHTML === "Audi-A3") {
         imgX.src = "img/Audi-A3.jpeg";
-      } else if (Title.innerHTML === "BMW-X5") {
+      } else if (title.innerHTML === "BMW-X5") {
         imgX.src = "img/bmw-x5.jpeg";
-      } else if (Title.innerHTML === "Mercedes-Benz C-Class") {
+      } else if (title.innerHTML === "Mercedes-Benz C-Class") {
         imgX.src = "img/mercedes.jpeg";
       }
 
       const SummaryTxt = `GRATULUJĘ!! ${
-        CustomerName.value
-      } dokonałeś zakupu samochodu ${Title.innerHTML} za ${
+        customerName.value
+      } dokonałeś zakupu samochodu ${title.innerHTML} za ${
         Price + total
       } PLN. ${
         selectedDeliveryDateLabel.textContent
       }. Typ finansowania: ${payWayText}. Dziękujemy za skorzystanie z naszych usług.`;
-      CarForm.classList.toggle("hidden");
+      carForm.classList.toggle("hidden");
       Summary.classList.toggle("hidden");
       SummaryDiv.innerHTML = SummaryTxt;
       clearLocalStorage();
@@ -228,6 +227,6 @@ Buy.addEventListener("click", () => {
 });
 
 document.getElementById("ButtonToBack").addEventListener("click", () => {
-  CarList.classList.toggle("hidden");
+  carList.classList.toggle("hidden");
   Summary.classList.add("hidden");
 });

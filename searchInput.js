@@ -1,5 +1,5 @@
-const searchInput = document.querySelector("#wyszukaj");
-const carsList = document.querySelectorAll(".car-item");
+const searchInput = document.querySelector("#src");
+const carsList = document.querySelectorAll(".carItem");
 
 searchInput.addEventListener("input", () => {
   const searchTerm = searchInput.value.toLowerCase().trim();
