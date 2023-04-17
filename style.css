@@ -138,8 +138,10 @@ form select {
   text-transform: uppercase;
 }
 
-#customerName {
-  text-align: center;
+#customerName, #deliveryDateSelect {
+  text-align: center; 
+  display: table-cell;
+  vertical-align: middle;
 }
 #nameError {
   background-color: red;

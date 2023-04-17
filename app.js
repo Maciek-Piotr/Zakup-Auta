@@ -15,6 +15,8 @@ backBtn.addEventListener("click", () => {
   carForm.classList.toggle("hidden");
   carList.classList.toggle("hidden");
   srcInput.classList.toggle("hidden");
+  nameError.classList.add("hidden");
+  customerName.classList.remove('input--error')
   title.innerHTML = "Zakup Auta";
 });
 
