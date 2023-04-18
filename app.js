@@ -45,6 +45,24 @@ buyBtns.forEach(function (buyBtn) {
     carList.classList.toggle("hidden");
     srcInput.classList.toggle("hidden");
 
+    const accessories = document.getElementsByName("accessories");
+      let total = 0;
+      for (let i = 0; i < accessories.length; i++) {
+        if (accessories[i].checked) {
+          switch (accessories[i].value) {
+            case "nr1":
+              total += 100;
+              break;
+            case "nr2":
+              total += 200;
+              break;
+            case "nr3":
+              total += 300;
+              break;
+          }
+        }
+      }
+
     if (buyBtn.classList.contains("FordMustang")) {
       title.innerHTML = "Ford Mustang";
       equipment.innerHTML =
@@ -52,7 +70,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Rok produkcji: 1969</li>" +
         "<li>Moc silnika: 250 KM</li>" +
         "<li>Przebieg: 120 000 km</li>" +
-        `<li>Cena: ${199000} PLN</li>` +
+        `<li>Cena: ${199000 + total} PLN</li>` +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
       imgY.src = "img/mustang.jpeg";
@@ -64,7 +82,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Rok produkcji: 2018</li>" +
         "<li>Moc silnika: 150 KM</li>" +
         "<li>Przebieg: 35 000 km</li>" +
-        `<li>Cena: ${87500} PLN</li>` +
+        `<li>Cena: ${87500 + total} PLN</li>` +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
       imgY.src = "img/Audi-A3.jpeg";
@@ -76,7 +94,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Rok produkcji: 2019</li>" +
         "<li>Moc silnika: 170 KM</li>" +
         "<li>Przebieg: 45 000 km</li>" +
-        `<li>Cena: ${109900} PLN</li>` +
+        `<li>Cena: ${109900 + total} PLN</li>` +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
       imgY.src = "img/mercedes.jpeg";
@@ -88,7 +106,7 @@ buyBtns.forEach(function (buyBtn) {
         " <li>Rok produkcji: 2020</li>" +
         " <li>Moc silnika: 265 KM</li>" +
         "<li>Przebieg: 20 000 km</li>" +
-        `<li>Cena: ${189000} PLN</li>` +
+        `<li>Cena: ${189000 + total} PLN</li>` +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
       imgY.src = "img/bmw-x5.jpeg";
@@ -100,7 +118,7 @@ buyBtns.forEach(function (buyBtn) {
         "<li>Rok produkcji: 2018</li>" +
         "<li>Moc silnika: 150 KM</li>" +
         "<li>Przebieg: 70 000 km</li>" +
-        `<li>Cena: ${79900} PLN</li>` +
+        `<li>Cena: ${79900 + total} PLN</li>` +
         "</ul>" +
         "<p>Najszybsza dostawa możliwa w ciągu 14 dni od daty zamówienia</p>";
       imgY.src = "img/Audi-A4.jpeg";
@@ -109,7 +127,7 @@ buyBtns.forEach(function (buyBtn) {
 });
 
 const nameError = document.getElementById("nameError");
-
+userName.innerHTML = "Imie i nazwisko:<br><br>" +  customerName.value
 customerName.addEventListener("input", () => {
   userName.innerHTML = "Imie i nazwisko:<br><br>" + customerName.value;
 });
